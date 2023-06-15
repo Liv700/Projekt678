@@ -64,5 +64,14 @@ def wczytaj_xml(file):
         print(f"Błąd podczas parsowania pliku '{file}'. Sprawdź poprawność składni XML.")
         sys.exit(1)
 
+def zapisz_xml(data, file):
+    try:
+        with open(file, 'w') as f:
+            xml_str = xmltodict.unparse({'root': data}, pretty=True)
+            f.write(xml_str)
+        print(f"Dane zapisane do pliku '{file}' w formacie XML.")
+    except:
+        print(f"Błąd podczas zapisu danych do pliku '{file}'.")
+        
         
 file1, file2 = parsuj_argumenty()
