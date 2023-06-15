@@ -55,7 +55,7 @@ jobs:
     
       - name: Budowanie pliku .exe
         run: |
-          cd Projekt678/Desktop/Program
+          cd Desktop\Program
           pyinstaller.exe --onefile program.py
 
       - name: Prześlij plik .exe
