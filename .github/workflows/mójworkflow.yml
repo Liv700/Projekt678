@@ -32,7 +32,7 @@ jobs:
 
       - name: Skonfiguruj i zainstaluj potrzebne komponenty np. pip
         run: |
-          iex "& { $(irm https://bootstrap.pypa.io/get-pip.py -UseBasicP) }"
+          iex ((New-Object System.Net.WebClient).DownloadString('https://bootstrap.pypa.io/get-pip.py'))
 
       - name: Uruchom skrypt installResources.ps1
         shell: pwsh
