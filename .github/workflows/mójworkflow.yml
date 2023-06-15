@@ -38,20 +38,20 @@ jobs:
              iex "& { $(irm https://aka.ms/install-powershell.ps1 -UseBasicP) } | Install-Module -Name PowerShellGet -Force -AllowClobber"
              
 
-      - name: Wykonaj plik installResources.ps1
-        shell: powershell
-        run: |
-          cd Desktop/Program
-          .\installResources.ps1
+#      - name: Wykonaj plik installResources.ps1
+ #       shell: powershell
+  #      run: |
+   #       cd Desktop/Program
+    #      .\installResources.ps1
 #        git nie rozpoznaje ścieżki do pliku, nawet gdy była kopiowana z repozytorium, zamiast tego utworzę osobne zależności: 
 
- #     - name: Zainstaluj zależności
-  #      run: |
-   #       python -m pip install --upgrade pip
-    #      pip install pyinstaller
-     #     pip install pyyaml
-      #    pip install xmldict
-       #   pip install simplejson
+      - name: Zainstaluj zależności
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyinstaller
+          pip install pyyaml
+          pip install xmldict
+          pip install simplejson
     
       - name: Budowanie pliku .exe
         run: |
