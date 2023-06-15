@@ -72,6 +72,17 @@ def zapisz_xml(data, file):
         print(f"Dane zapisane do pliku '{file}' w formacie XML.")
     except:
         print(f"Błąd podczas zapisu danych do pliku '{file}'.")
+
+def sprawdz_format(plik):
+    ext = plik.split('.')[-1].lower()
+    if ext in ['json', 'yaml', 'yml', 'xml']:
+        return ext
+    else:
+        print(f"Nieobsługiwany format pliku '{plik}'.")
+        sys.exit(1)
         
         
 file1, file2 = parsuj_argumenty()
+
+ext1 = sprawdz_format(file1)
+ext2 = sprawdz_format(file2)
