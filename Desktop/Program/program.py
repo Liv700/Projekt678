@@ -52,5 +52,17 @@ def zapis_yaml(data, file):
     except:
         print(f"Błąd podczas zapisu danych do pliku '{file}'.")
 
+def wczytaj_xml(file):
+    try:
+        with open(file, 'r') as f:
+            data = xmltodict.parse(f.read())
+        return data
+    except FileNotFoundError:
+        print(f"Plik '{file}' nie istnieje.")
+        sys.exit(1)
+    except xmltodict.ParseError:
+        print(f"Błąd podczas parsowania pliku '{file}'. Sprawdź poprawność składni XML.")
+        sys.exit(1)
+
         
 file1, file2 = parsuj_argumenty()
