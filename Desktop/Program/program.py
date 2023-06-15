@@ -31,5 +31,19 @@ def zapisz_json(data, file):
         print(f"Dane zapisane do pliku '{file}' w formacie JSON.")
     except:
         print(f"Błąd podczas zapisu danych do pliku '{file}'.")
+
+def wczytaj_yaml(file):
+    try:
+        with open(file, 'r') as f:
+            data = yaml.safe_load(f)
+        return data
+    except FileNotFoundError:
+        print(f"Plik '{file}' nie istnieje.")
+        sys.exit(1)
+    except yaml.YAMLError:
+        print(f"Błąd podczas parsowania pliku '{file}'. Sprawdź poprawność składni YAML.")
+        sys.exit(1)
+
+
         
 file1, file2 = parsuj_argumenty()
