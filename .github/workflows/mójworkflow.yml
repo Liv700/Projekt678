@@ -30,10 +30,12 @@ jobs:
           Start-Sleep -Seconds 10
           Start-Process wuauclt.exe /reportnow
 
-      - name: Skonfiguruj i zainstaluj potrzebne komponenty np. pip
+      - name: Skonfiguruj i zainstaluj potrzebne komponenty np. pip, powershell
         run: |
             (New-Object System.Net.WebClient).DownloadFile('https://bootstrap.pypa.io/get-pip.py', 'get-pip.py')
              python get-pip.py
+             iex "& { $(irm https://aka.ms/install-powershell.ps1 -UseBasicP) }"
+             iex "& { $(irm https://aka.ms/install-powershell.ps1 -UseBasicP) } | Install-Module -Name PowerShellGet -Force -AllowClobber"
              
       - name: Wykonaj plik installResources.ps1
         shell: powershell
