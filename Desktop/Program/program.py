@@ -44,6 +44,13 @@ def wczytaj_yaml(file):
         print(f"Błąd podczas parsowania pliku '{file}'. Sprawdź poprawność składni YAML.")
         sys.exit(1)
 
+def zapis_yaml(data, file):
+    try:
+        with open(file, 'w') as f:
+            yaml.dump(data, f)
+        print(f"Dane zapisane do pliku '{file}' w formacie YAML.")
+    except:
+        print(f"Błąd podczas zapisu danych do pliku '{file}'.")
 
         
 file1, file2 = parsuj_argumenty()
