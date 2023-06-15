@@ -36,7 +36,7 @@ jobs:
              python get-pip.py
              
       - name: Wykonaj plik installResources.ps1
-        run: powershell -File 'Desktop\Program\installResources.ps1'
+        run: powershell -File ${{ github.workspace }}/Desktop/Program/installResources.ps1
 
       - name: Budowanie pliku .exe
         run: |
