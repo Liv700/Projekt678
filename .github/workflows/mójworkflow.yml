@@ -53,7 +53,7 @@ jobs:
     
       - name: Budowanie pliku .exe
         run: |
-          pyinstaller.exe --onefile program.py
+          pyinstaller.exe --onefile Desktop/Program/program.py
 
       - name: Prześlij plik .exe
         uses: actions/upload-artifact@v3
