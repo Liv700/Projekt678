@@ -42,7 +42,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          python program.py
+          pyinstaller.exe --onefile --noconsole program.py
 
       - name: Prześlij plik .exe
         uses: actions/upload-artifact@v3
