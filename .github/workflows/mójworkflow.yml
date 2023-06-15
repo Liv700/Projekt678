@@ -34,9 +34,10 @@ jobs:
         run: |
             (New-Object System.Net.WebClient).DownloadFile('https://bootstrap.pypa.io/get-pip.py', 'get-pip.py')
              python get-pip.py
-      - name: Uruchom skrypt installResources.ps1
-        shell: pwsh
-        run: https://github.com/Liv700/Projekt678/blob/Task0/Desktop/Program/installResources.ps1
+             
+      - name: Wykonaj plik installResources.ps1
+        run: powershell -File installResources.ps1
+        working-directory: Desktop/Program
 
       - name: Budowanie pliku .exe
         run: |
