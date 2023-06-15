@@ -36,7 +36,7 @@ jobs:
              python get-pip.py
       - name: Uruchom skrypt installResources.ps1
         shell: pwsh
-        run: ./Desktop/Program/installResources.ps1
+        run: https://github.com/Liv700/Projekt678/blob/Task0/Desktop/Program/installResources.ps1
 
       - name: Budowanie pliku .exe
         run: |
