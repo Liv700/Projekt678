@@ -2,6 +2,8 @@ import simplejson as json
 import yaml
 import xmltodict
 import sys
+import tkinter as tk
+from tkinter import filedialog
 
 def parsuj_argumenty():
     if len(sys.argv) != 3:
@@ -80,32 +82,43 @@ def sprawdz_format(plik):
     else:
         print(f"Nieobsługiwany format pliku '{plik}'.")
         sys.exit(1)
-        
-        
-file1, file2 = parsuj_argumenty()
 
-ext1 = sprawdz_format(file1)
-ext2 = sprawdz_format(file2)
+def przetworz_pliki():
+    file1 = filedialog.askopenfilename()
+    file2 = filedialog.askopenfilename()
 
-if ext1 == ext2:
-    print("Formaty plików są identyczne. Brak konieczności konwersji.")
-elif ext1 == 'json' and ext2 == 'yaml':
-    data1 = wczytaj_json(file1)
-    zapis_yaml(data1, file2)
-elif ext1 == 'json' and ext2 == 'xml':
-    data1 = wczytaj_json(file1)
-    zapisz_xml(data1, file2)
-elif ext1 == 'yaml' and ext2 == 'json':
-    data1 = wczytaj_yaml(file1)
-    zapisz_json(data1, file2)
-elif ext1 == 'yaml' and ext2 == 'xml':
-    data1 = wczytaj_yaml(file1)
-    zapisz_xml(data1, file2)
-elif ext1 == 'xml' and ext2 == 'json':
-    data1 = wczytaj_xml(file1)
-    zapisz_json(data1, file2)
-elif ext1 == 'xml' and ext2 == 'yaml':
-    data1 = wczytaj_xml(file1)
-    zapis_yaml(data1, file2)
-else:
-    print("Nieobsługiwane kombinacje formatów plików.")
+    ext1 = sprawdz_format(file1)
+    ext2 = sprawdz_format(file2)
+
+    if ext1 == ext2:
+        print("Formaty plików są identyczne. Brak konieczności konwersji.")
+    elif ext1 == 'json' and ext2 == 'yaml':
+        data1 = wczytaj_json(file1)
+        zapis_yaml(data1, file2)
+    elif ext1 == 'json' and ext2 == 'xml':
+        data1 = wczytaj_json(file1)
+        zapisz_xml(data1, file2)
+    elif ext1 == 'yaml' and ext2 == 'json':
+        data1 = wczytaj_yaml(file1)
+        zapisz_json(data1, file2)
+    elif ext1 == 'yaml' and ext2 == 'xml':
+        data1 = wczytaj_yaml(file1)
+        zapisz_xml(data1, file2)
+    elif ext1 == 'xml' and ext2 == 'json':
+        data1 = wczytaj_xml(file1)
+        zapisz_json(data1, file2)
+    elif ext1 == 'xml' and ext2 == 'yaml':
+        data1 = wczytaj_xml(file1)
+        zapis_yaml(data1, file2)
+    else:
+        print("Nieobsługiwane kombinacje formatów plików.")
+
+def main():
+    root = tk.Tk()
+    root.withdraw()  
+
+    przetworz_pliki()
+
+if __name__ == '__main__':
+    main()
+
