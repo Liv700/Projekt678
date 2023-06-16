@@ -41,7 +41,7 @@ jobs:
 #      - name: Wykonaj plik installResources.ps1
  #       shell: powershell
   #      run: |
-   #       cd Desktop\Program
+   #       cd Desktop/Program
     #      .\installResources.ps1
 #        git nie rozpoznaje ścieżki do pliku, nawet gdy była kopiowana z repozytorium, zamiast tego utworzę osobne zależności: 
 
@@ -55,7 +55,7 @@ jobs:
     
       - name: Budowanie pliku .exe
         run: |
-          cd Liv700/Projekt678/Desktop/Program
+          cd Desktop/Program
           pyinstaller.exe --onefile --noconsole program.py
 
       - name: Prześlij plik .exe
