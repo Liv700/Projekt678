@@ -21,6 +21,11 @@ jobs:
     steps:
       - name: Checkout kodu
         uses: actions/checkout@v3
+        
+      - name: Wylistuj pliki w repozytorium
+        run: |
+          git ls-files
+          git ls-tree
 
       - name: Ustawienia domyślnego serwera Windows
         run: |
