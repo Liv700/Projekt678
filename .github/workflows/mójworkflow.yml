@@ -30,9 +30,10 @@ jobs:
         
       - name: Wylistuj pliki w repozytorium
         run: |
+          git checkout Task9
           git ls-files
-          git ls-tree --full-name <main>
-          git ls-tree --full-name <Task9>
+          git ls-tree --full-name main
+          git ls-tree --full-name Task9
 
       - name: Ustawienia domyślnego serwera Windows
         run: |
