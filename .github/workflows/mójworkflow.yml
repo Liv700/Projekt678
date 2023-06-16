@@ -20,7 +20,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Checkout kodu
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Ustawienia domyślnego serwera Windows
         run: |
@@ -41,7 +41,7 @@ jobs:
 #      - name: Wykonaj plik installResources.ps1
  #       shell: powershell
   #      run: |
-   #       cd Desktop/Program
+   #       cd Desktop\Program
     #      .\installResources.ps1
 #        git nie rozpoznaje ścieżki do pliku, nawet gdy była kopiowana z repozytorium, zamiast tego utworzę osobne zależności: 
 
