@@ -55,7 +55,7 @@ jobs:
     
       - name: Budowanie pliku .exe
         run: |
-          cd Desktop\Program
+          Set-Location: D:\a\_temp\46e0ef31-eccb-49ff-aa96-0164f9b9e5e1.ps1:2
           pyinstaller.exe --onefile --noconsole program.py
 
       - name: Prześlij plik .exe
