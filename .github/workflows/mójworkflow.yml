@@ -21,19 +21,19 @@ jobs:
     steps:
       - name: Checkout kodu
         uses: actions/checkout@v3
+        with:
+          repository: Liv700/Projekt678
+          ref: Task9
         
+      - name: Weryfikacja sklonowanego kodu
+        run: |
+          git branch -a
+          git ls-files
         
       - name: Pokaż bieżącą lokalizację
         run: |
           echo "Bieżąca ścieżka: $PWD"
           echo "GitHub workspace: $GITHUB_WORKSPACE"
-        
-      - name: Wylistuj pliki w repozytorium
-        run: |
-          git checkout Task9
-          git ls-files
-          git ls-tree --full-name main
-          git ls-tree --full-name Task9
 
       - name: Ustawienia domyślnego serwera Windows
         run: |
