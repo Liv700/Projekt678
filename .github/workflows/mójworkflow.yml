@@ -22,10 +22,17 @@ jobs:
       - name: Checkout kodu
         uses: actions/checkout@v3
         
+        
+      - name: Pokaż bieżącą lokalizację
+        run: |
+          echo "Bieżąca ścieżka: $PWD"
+          echo "GitHub workspace: $GITHUB_WORKSPACE"
+        
       - name: Wylistuj pliki w repozytorium
         run: |
           git ls-files
-          git ls-tree
+          git ls-tree --full-name <main>
+          git ls-tree --full-name <Task9>
 
       - name: Ustawienia domyślnego serwera Windows
         run: |
