@@ -75,4 +75,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Artefakcik
-          path: program.exe
+          path: Desktop/Program/program.exe
